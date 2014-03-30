@@ -1,0 +1,6 @@
+pairs:
+  fj: Foo Jones; foo
+  bj: Bar Jones; bar
+email:
+  prefix: pair
+  domain: googlegroups.com
