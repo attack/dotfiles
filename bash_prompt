@@ -51,6 +51,8 @@ git_repo_path() {
 }
 
 git_branch_name() {
+  # does this work for git co 
+  # git rev-parse --symbolic-full-name --abbrev-ref HEAD 2> /dev/null
   git symbolic-ref HEAD 2>/dev/null
 }
 
@@ -78,6 +80,7 @@ git_sub_directoy() {
 }
 
 is_git_repo() {
+  # git rev-parse --is-inside-work-tree
   local repo_path=`git_repo_path 2> /dev/null`
   if [[ ! -e "${repo_path}" ]]; then
     false
@@ -120,7 +123,17 @@ pretty_git_status() {
 
 pretty_git_branch_name() {
   if is_git_repo; then
-    local repo_branch_name="$(git_branch_name)" || "(unnamed branch)"
+    local repo_name=$(git_branch_name)
+    if [ -n $repo_name ]; then
+      # echo -ne "XX${git_branch_name}"
+      local NM=$(git name-rev --name-only HEAD 2> /dev/null)
+      # local repo_branch_name="(unnamed branch)"
+      local repo_branch_name="detached ${repo_name}"
+    else
+      # echo -ne "YY${git_branch_name}"
+      local repo_branch_name=$(repo_name)
+    fi
+    # local repo_branch_name=$(git_branch_name || "(unnamed branch)")
     echo -ne " ${RED}(${repo_branch_name##refs/heads/}$(pretty_git_status)${RED})"
   fi
 }
