@@ -43,7 +43,7 @@ Bundle 'kchmck/vim-coffee-script'
 "
 " General Editing
 "
-Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-vinegar'
 Bundle 'regreplop.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'

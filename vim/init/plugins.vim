@@ -8,19 +8,10 @@ autocmd FileType javascript let b:surround_36 = "$(\r)"
 map <leader>g   :Gblame<CR>
 
 
-" NERDTREE
+" VIM_NIEGAR
 "
-" Small default width for NERDTree pane
-let g:NERDTreeWinSize = 20
-" Change working directory if you change root directories
-let g:NERDTreeChDirMode=2
-" Show dotfiles by default
-let NERDTreeShowHidden=1
-
-" File tree browser
-map \ :NERDTreeToggle<CR>
-" File tree browser showing current file - pipe (shift-backslash)
-map \| :NERDTreeFind<CR>
+" map \ <Plug>VinegarUp<CR>
+map \| <Plug>VinegarUp<CR>
 
 
 " VIM-COMMENTARY
