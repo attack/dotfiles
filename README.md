@@ -13,7 +13,12 @@ git clone git@github.com:attack/dotfiles.git
 
 Install [rcm](https://github.com/thoughtbot/rcm)
 ```sh
-brew bundle dotfiles/Brewfile
+# from outside repo
+brew bundle --file=dotfiles/Brewfile
+```
+```sh
+# from inside repo
+brew bundle
 ```
 
 Install dotfiles:
