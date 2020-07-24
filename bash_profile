@@ -4,7 +4,7 @@
 
 # bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+  source $(brew --prefix)/etc/bash_completion
 fi
 
 bind '"\e[A": history-search-backward'
@@ -12,13 +12,6 @@ bind '"\e[B": history-search-forward'
 
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
-
-# bash auto-completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
 
 # enable colored output from ls, etc
 export CLICOLOR=1
@@ -43,9 +36,9 @@ export PATH="/usr/local/pgsql/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
 # CHRUBY
-if [ -d "/usr/local/share/chruby" ]; then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
+if [ -d "/usr/local/opt/chruby" ]; then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/opt/chruby/share/chruby/auto.sh
 
 # RBENV
 elif [ -d "$HOME/.rbenv" ]; then
