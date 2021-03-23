@@ -48,9 +48,9 @@ export PATH="/usr/local/pgsql/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
 # CHRUBY
-if [ -d "/usr/local/share/chruby" ]; then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
+if [ -d "$(brew --prefix)/share/chruby" ]; then
+  source "$(brew --prefix)/share/chruby/chruby.sh"
+  source "$(brew --prefix)/share/chruby/auto.sh"
 
 # RBENV
 elif [ -d "$HOME/.rbenv" ]; then
