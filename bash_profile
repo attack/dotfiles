@@ -25,13 +25,6 @@ bind '"\e[B": history-search-forward'
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 
-# bash auto-completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-
 # enable colored output from ls, etc
 export CLICOLOR=1
 
