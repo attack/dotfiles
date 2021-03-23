@@ -1,5 +1,8 @@
 # vim:ft=sh:
 
+# silence osx message about default being zsh
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 [[ -f ~/.bash_prompt ]] && source ~/.bash_prompt
 
 # bash completion
