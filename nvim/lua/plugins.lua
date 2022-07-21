@@ -54,16 +54,18 @@ return packer.startup(function(use)
   }
 
   -- color schemes
-  use 'nvim-lualine/lualine.nvim'
-  use 'folke/tokyonight.nvim'
-  vim.cmd[[colorscheme tokyonight]]
-  require('lualine').setup {
-    options = {
-      -- ... your lualine config
-      theme = 'tokyonight'
-      -- ... your lualine config
-    }
+  use "EdenEast/nightfox.nvim"
+  vim.cmd("colorscheme nightfox")
+
+  -- status line
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = function()
+      require('plugins.lualine')
+    end,
   }
+
 
   -- figure out how to use them properly
   -- use 'github/copilot.vim'
