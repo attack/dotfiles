@@ -1,0 +1,10 @@
+-- vim.o.notimeout  = true  -- no command timeout
+vim.o.expandtab     = true  -- use soft tabs
+vim.o.tabstop       = 2
+vim.o.shiftwidth    = 2     -- width of auto-indent
+vim.o.softtabstop   = 2
+-- vim.o.nowrap     = true  -- no wrapping
+vim.wo.wrap         = false
+vim.o.textwidth     = 0
+vim.o.number        = true  -- line numbers
+vim.o.numberwidth   = 4
