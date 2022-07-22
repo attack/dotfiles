@@ -36,6 +36,7 @@ local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
+local home = os.getenv("HOME")
 require('lspconfig')['rust_analyzer'].setup{
   on_attach = on_attach,
   flags = lsp_flags,
@@ -47,12 +48,12 @@ require('lspconfig')['rust_analyzer'].setup{
 require('lspconfig')['zls'].setup{
   on_attach = on_attach,
   flags = lsp_flags,
-  cmd = { "/home/alex/workspace/zigtools/zls/zig-out/bin/zls" },
+  cmd = { home .. "/workspace/zigtools/zls/zig-out/bin/zls" },
 }
 require('lspconfig')['elixirls'].setup{
   on_attach = on_attach,
   flags = lsp_flags,
-  cmd = { "/home/alex/workspace/elixir-lsp/elixir-ls/rel/language_server.sh" },
+  cmd = { home .. "/workspace/elixir-lsp/elixir-ls/rel/language_server.sh" },
 }
 require('lspconfig')['tsserver'].setup{
   on_attach = on_attach,
